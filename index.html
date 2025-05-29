@@ -7,6 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body class="bg-gradient-to-r from-slate-100 to-gray-100 flex flex-col py-10">
+
     <!-- Header -->
     <h1 class="text-slate-900 text-5xl text-center py-4">
       Metric / Imperial Measurement Convertor
@@ -39,15 +40,18 @@
       <!-- Select conversion type -->
       <div class="flex gap-8 mb-10">
         <h3 class="text-xl font-semibold my-auto">Select Conversion Type:</h3>
-        <select class="text-xl border-2 rounded-xl p-2">
+        <select 
+          onchange="toggleConversion(this.value)"
+          class="text-xl border-2 rounded-xl p-2">
           <option value="toMetric">Pounds (lbs) to Kilograms (kg)</option>
           <option value="toImperial">Kilograms (kg) to Pounds (lbs)</option>
         </select>
       </div>
 
       <!-- To Metric -->
-      <div id="toMetric" class="flex gap-8">
+      <div class="toMetric flex gap-8">
         <input
+          type="number"
           class="text-xl border-2 rounded-xl p-2"
           placeholder="Enter Pounds (lbs):"
         />
@@ -57,8 +61,9 @@
       </div>
 
       <!-- To Imperial -->
-      <div id="toImperial" class="flex gap-8 hidden">
+      <div class="toImperial flex gap-8 hidden">
         <input
+          type="number"
           class="text-xl border-2 rounded-xl p-2"
           placeholder="Enter Kilograms (kgs):"
         />
@@ -73,15 +78,18 @@
       <!-- Select conversion type -->
       <div class="flex gap-8 mb-10">
         <h3 class="text-xl font-semibold my-auto">Select Conversion Type:</h3>
-        <select class="text-xl border-2 rounded-xl p-2">
+        <select 
+          onchange="toggleConversion(this.value)"
+          class="text-xl border-2 rounded-xl p-2">
           <option value="toMetric">Miles to Kilometers (km)</option>
           <option value="toImperial">Kilometers (km) to Miles</option>
         </select>
       </div>
 
       <!-- To Metric -->
-      <div id="toMetric" class="flex gap-8">
+      <div class="toMetric flex gap-8">
         <input
+          type="number"
           class="text-xl border-2 rounded-xl p-2"
           placeholder="Enter Miles:"
         />
@@ -91,10 +99,11 @@
       </div>
 
       <!-- To Imperial -->
-      <div id="toImperial" class="flex gap-8 hidden">
+      <div class="toImperial flex gap-8 hidden">
         <input
+          type="number"
           class="text-xl border-2 rounded-xl p-2"
-          placeholder="Enter Kilograms (kgs):"
+          placeholder="Enter Kilometers:"
         />
         <p class="text-xl border-2 rounded-xl p-2">
           Miles: <span id="distanceResult"></span>
@@ -110,7 +119,9 @@
       <!-- Select conversion type -->
       <div class="flex gap-8 mb-10">
         <h3 class="text-xl font-semibold my-auto">Select Conversion Type:</h3>
-        <select class="text-xl border-2 rounded-xl p-2">
+        <select 
+          onchange="toggleConversion(this.value)"
+          class="text-xl border-2 rounded-xl p-2">
           <option value="toMetric">
             Fahrenheit (F&deg) to Celsius (C&deg)
           </option>
@@ -121,8 +132,9 @@
       </div>
 
       <!-- To Metric -->
-      <div id="toMetric" class="flex gap-8">
+      <div class="toMetric flex gap-8">
         <input
+          type="number"
           class="text-xl border-2 rounded-xl p-2"
           placeholder="Enter Fahrenheit (F&deg):"
         />
@@ -132,10 +144,11 @@
       </div>
 
       <!-- To Imperial -->
-      <div id="toImperial" class="flex gap-8 hidden">
+      <div class="toImperial flex gap-8 hidden">
         <input
+          type="number"
           class="text-xl border-2 rounded-xl p-2"
-          placeholder="Enter Kilograms (kgs):"
+          placeholder="Enter Celsius (C&deg):"
         />
         <p class="text-xl border-2 rounded-xl p-2">
           Fahrenheit (F&deg): <span id="weightResult"></span>
