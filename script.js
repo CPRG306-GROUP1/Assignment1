@@ -42,3 +42,13 @@ function toggleConversion(conversionType) {
     toImperial.forEach(item => item.classList.remove("hidden"))
   }
 }
+//Function to convert from to
+function getConverter(from, to) {
+      const conversions = {
+      const input = document.getElementById("inputValues").value.trim();
+      const type = document.getElementById("conversionType").value;
+      const resultEl = document.getElementById("result");
+}
+ };
+      return conversions[`${from}_${to}`];
+}
