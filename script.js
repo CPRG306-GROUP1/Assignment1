@@ -22,3 +22,23 @@ function switchTab(tabName) {
     activeBtn.classList.add('text-blue-600', 'font-semibold', 'border-b-2', 'border-blue-600');
   }
 }
+
+
+/**
+ * Toggles between toMetric and toImperial conversion modes
+ */
+
+function toggleConversion(conversionType) {
+  // Selects all 
+  const toMetric = document.querySelectorAll(".toMetric");
+  const toImperial = document.querySelectorAll(".toImperial");
+
+  if (conversionType === "toMetric"){
+    toMetric.forEach(item => item.classList.remove("hidden"))
+    toImperial.forEach(item => item.classList.add("hidden"))
+  }
+  if (conversionType === "toImperial"){
+    toMetric.forEach(item => item.classList.add("hidden"))
+    toImperial.forEach(item => item.classList.remove("hidden"))
+  }
+}
