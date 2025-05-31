@@ -42,3 +42,18 @@ function toggleConversion(conversionType) {
     toImperial.forEach(item => item.classList.remove("hidden"))
   }
 }
+
+
+// converts pounds to kilograms
+function poundsToKilograms(){
+  let pounds = parseFloat(document.getElementById("poundsInput").value);
+  let result = pounds * 0.45359237;
+  document.getElementById('kilogramResult').textContent = result.toFixed(2);
+}
+
+// converts kilograms to pounds
+function kilogramsToPounds(){
+  let kilogram = parseFloat(document.getElementById("kilogramInput").value);
+  let result = kilogram * 2.2;
+  document.getElementById('poundsResult').textContent = result.toFixed(2);
+}
