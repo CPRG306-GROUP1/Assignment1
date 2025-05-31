@@ -69,7 +69,7 @@ function milesToKilometers() {
   let result = miles * 1.60934;
   document.getElementById("kilometersResult").textContent = result.toFixed(2);
 }
-
+//function kilometer to miles
 function kilometersToMiles() {
   let input = document.querySelector("#distance .toImperial input").value;
   let kilometers = parseFloat(input);
