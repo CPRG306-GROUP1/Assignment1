@@ -42,3 +42,41 @@ function toggleConversion(conversionType) {
     toImperial.forEach(item => item.classList.remove("hidden"))
   }
 }
+
+
+// converts pounds to kilograms
+function poundsToKilograms(){
+  let pounds = parseFloat(document.getElementById("poundsInput").value);
+  let result = pounds * 0.45359237;
+  document.getElementById('kilogramResult').textContent = result.toFixed(2);
+}
+
+// converts kilograms to pounds
+function kilogramsToPounds(){
+  let kilogram = parseFloat(document.getElementById("kilogramInput").value);
+  let result = kilogram * 2.2;
+  document.getElementById('poundsResult').textContent = result.toFixed(2);
+}
+// converts Miles to kilometer
+// === Distance Conversion Functions ===
+function milesToKilometers() {
+  let input = document.querySelector("#distance .toMetric input").value;
+  let miles = parseFloat(input);
+  if (isNaN(miles)) {
+    alert("Please enter a valid number for miles.");
+    return;
+  }
+  let result = miles * 1.60934;
+  document.getElementById("kilometersResult").textContent = result.toFixed(2);
+}
+
+function kilometersToMiles() {
+  let input = document.querySelector("#distance .toImperial input").value;
+  let kilometers = parseFloat(input);
+  if (isNaN(kilometers)) {
+    alert("Please enter a valid number for kilometers.");
+    return;
+  }
+  let result = kilometers / 1.60934;
+  document.getElementById("milesResult").textContent = result.toFixed(2);
+}
