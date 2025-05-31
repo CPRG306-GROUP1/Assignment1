@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -17,7 +18,7 @@
     <div class="flex justify-evenly mb-6 gap-8 mt-6">
       <button
         onclick="switchTab('weight')"
-        class="tab-button text-3xl font-semibold border-b-2"
+        class="tab-button text-3xl font-semibold border-b-2 text-blue-600 font-semibold border-b-2 border-blue-600"
       >
         Weight
       </button>
@@ -36,7 +37,7 @@
     </div>
 
     <!-- Weight Tab -->
-    <div id="weight" class="tab-content hidden mx-auto mt-10">
+    <div id="weight" class="tab-content mx-auto mt-10">
       <!-- Select conversion type -->
       <div class="flex gap-8 mb-10">
         <h3 class="text-xl font-semibold my-auto">Select Conversion Type:</h3>
@@ -52,11 +53,17 @@
       <div class="toMetric flex gap-8">
         <input
           type="number"
+          id="poundsInput"
           class="text-xl border-2 rounded-xl p-2"
           placeholder="Enter Pounds (lbs):"
         />
+        <button
+          onclick="poundsToKilograms()"
+          class="py-2 px-4 bg-blue-600 hover:bg-blue-800 duration-500 text-white rounded-xl">
+          Convert
+        </button>
         <p class="text-xl border-2 rounded-xl p-2">
-          Kilograms (kgs): <span id="weightResult"></span>
+          <span id="kilogramResult">0</span> Kilograms (kgs)
         </p>
       </div>
 
@@ -64,11 +71,17 @@
       <div class="toImperial flex gap-8 hidden">
         <input
           type="number"
+          id="kilogramInput"
           class="text-xl border-2 rounded-xl p-2"
           placeholder="Enter Kilograms (kgs):"
         />
+        <button
+          onclick="kilogramsToPounds()"
+          class="py-2 px-4 bg-blue-600 hover:bg-blue-800 duration-500 text-white rounded-xl">
+          Convert
+        </button>
         <p class="text-xl border-2 rounded-xl p-2">
-          Pounds (lbs): <span id="weightResult"></span>
+          <span id="poundsResult">0</span> Pounds (lbs) 
         </p>
       </div>
     </div>
@@ -85,16 +98,22 @@
           <option value="toImperial">Kilometers (km) to Miles</option>
         </select>
       </div>
-
+      
       <!-- To Metric -->
       <div class="toMetric flex gap-8">
         <input
           type="number"
+          id="milesInput"
           class="text-xl border-2 rounded-xl p-2"
           placeholder="Enter Miles:"
         />
+        <button
+         onclick="milesToKilometers()"
+          class="py-2 px-4 bg-blue-600 hover:bg-blue-800 duration-500 text-white rounded-xl">
+          Convert
+        </button>
         <p class="text-xl border-2 rounded-xl p-2">
-          Kilometers (Km): <span id="distanceResult"></span>
+          Kilometers (Km): <span id="kilometersResult"></span>
         </p>
       </div>
 
@@ -102,11 +121,16 @@
       <div class="toImperial flex gap-8 hidden">
         <input
           type="number"
+          id="KilometersIn"
           class="text-xl border-2 rounded-xl p-2"
           placeholder="Enter Kilometers:"
         />
+        <button
+          class="py-2 px-4 bg-blue-600 hover:bg-blue-800 duration-500 text-white rounded-xl">
+          Convert
+        </button>
         <p class="text-xl border-2 rounded-xl p-2">
-          Miles: <span id="distanceResult"></span>
+          Miles: <span id="milesResult"></span>
         </p>
       </div>
     </div>
@@ -138,8 +162,12 @@
           class="text-xl border-2 rounded-xl p-2"
           placeholder="Enter Fahrenheit (F&deg):"
         />
+        <button
+          class="py-2 px-4 bg-blue-600 hover:bg-blue-800 duration-500 text-white rounded-xl">
+          Convert
+        </button>
         <p class="text-xl border-2 rounded-xl p-2">
-          Celsius (C&deg): <span id="weightResult"></span>
+          Celsius (C&deg): <span id="celsiusResult"></span>
         </p>
       </div>
 
@@ -150,8 +178,12 @@
           class="text-xl border-2 rounded-xl p-2"
           placeholder="Enter Celsius (C&deg):"
         />
+        <button
+          class="py-2 px-4 bg-blue-600 hover:bg-blue-800 duration-500 text-white rounded-xl">
+          Convert
+        </button>
         <p class="text-xl border-2 rounded-xl p-2">
-          Fahrenheit (F&deg): <span id="weightResult"></span>
+          Fahrenheit (F&deg): <span id="farenheitResult"></span>
         </p>
       </div>
     </div>
