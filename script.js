@@ -41,8 +41,6 @@ function toggleConversion(conversionType) {
     toMetric.forEach(item => item.classList.add("hidden"))
     toImperial.forEach(item => item.classList.remove("hidden"))
   }
-}
-
 
 // converts pounds to kilograms
 function poundsToKilograms(){
