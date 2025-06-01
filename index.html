@@ -6,10 +6,9 @@
     <title>Group 1 - Assignment 1</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="bg-gradient-to-r from-slate-100 to-gray-100 flex flex-col py-10">
-
+  <body class="bg-slate-200 flex flex-col">
     <!-- Header -->
-    <h1 class="text-slate-900 text-5xl text-center py-4">
+    <h1 class="bg-slate-800 text-gray-200 text-5xl text-center py-10">
       Metric / Imperial Measurement Convertor
     </h1>
 
@@ -23,13 +22,13 @@
       </button>
       <button
         onclick="switchTab('distance')"
-        class="tab-button text-3xl font-semibold border-b-2"
+        class="tab-button text-3xl font-semibold border-b-2 border-black"
       >
         Distance
       </button>
       <button
         onclick="switchTab('temperature')"
-        class="tab-button text-3xl font-semibold border-b-2"
+        class="tab-button text-3xl font-semibold border-b-2 border-black"
       >
         Temperature
       </button>
@@ -40,9 +39,10 @@
       <!-- Select conversion type -->
       <div class="flex gap-8 mb-10">
         <h3 class="text-xl font-semibold my-auto">Select Conversion Type:</h3>
-        <select 
+        <select
           onchange="toggleConversion(this.value)"
-          class="text-xl border-2 rounded-xl p-2">
+          class="text-xl border-2 rounded-xl p-2"
+        >
           <option value="toMetric">Pounds (lbs) to Kilograms (kg)</option>
           <option value="toImperial">Kilograms (kg) to Pounds (lbs)</option>
         </select>
@@ -58,11 +58,12 @@
         />
         <button
           onclick="poundsToKilograms()"
-          class="py-2 px-4 bg-blue-600 hover:bg-blue-800 duration-500 text-white rounded-xl">
+          class="py-2 px-4 bg-slate-700 hover:bg-blue-800 duration-500 text-white rounded-xl"
+        >
           Convert
         </button>
-        <p class="text-xl border-2 rounded-xl p-2">
-          <span id="kilogramResult">0</span> Kilograms (kgs)
+        <p class="text-xl border-2 rounded-xl px-4 py-2 bg-slate-300">
+          Result: <span id="kilogramResult">0</span> kg
         </p>
       </div>
 
@@ -76,11 +77,12 @@
         />
         <button
           onclick="kilogramsToPounds()"
-          class="py-2 px-4 bg-blue-600 hover:bg-blue-800 duration-500 text-white rounded-xl">
+          class="py-2 px-4 bg-slate-700 hover:bg-blue-800 duration-500 text-white rounded-xl"
+        >
           Convert
         </button>
-        <p class="text-xl border-2 rounded-xl p-2">
-          <span id="poundsResult">0</span> Pounds (lbs) 
+        <p class="text-xl border-2 rounded-xl px-4 py-2 bg-slate-300">
+          Result: <span id="poundsResult">0</span> lbs
         </p>
       </div>
     </div>
@@ -90,43 +92,50 @@
       <!-- Select conversion type -->
       <div class="flex gap-8 mb-10">
         <h3 class="text-xl font-semibold my-auto">Select Conversion Type:</h3>
-        <select 
+        <select
           onchange="toggleConversion(this.value)"
-          class="text-xl border-2 rounded-xl p-2">
+          class="text-xl border-2 rounded-xl p-2"
+        >
           <option value="toMetric">Miles to Kilometers (km)</option>
           <option value="toImperial">Kilometers (km) to Miles</option>
         </select>
       </div>
-      
+
       <!-- To Metric -->
       <div class="toMetric flex gap-8">
         <input
+          id="milesInput"
           type="number"
           class="text-xl border-2 rounded-xl p-2"
           placeholder="Enter Miles:"
         />
         <button
-          class="py-2 px-4 bg-blue-600 hover:bg-blue-800 duration-500 text-white rounded-xl">
+          onclick="milesToKilometers()"
+          class="py-2 px-4 bg-slate-700 hover:bg-blue-800 duration-500 text-white rounded-xl"
+        >
           Convert
         </button>
-        <p class="text-xl border-2 rounded-xl p-2">
-          Kilometers (Km): <span id="kilometersResult"></span>
+        <p class="text-xl border-2 rounded-xl px-4 py-2 bg-slate-300">
+          Result: <span id="kilometersResult">0</span> km
         </p>
       </div>
 
       <!-- To Imperial -->
       <div class="toImperial flex gap-8 hidden">
         <input
+          id="kilometersInput"
           type="number"
           class="text-xl border-2 rounded-xl p-2"
           placeholder="Enter Kilometers:"
         />
         <button
-          class="py-2 px-4 bg-blue-600 hover:bg-blue-800 duration-500 text-white rounded-xl">
+          onclick="kilometersToMiles()"
+          class="py-2 px-4 bg-slate-700 hover:bg-blue-800 duration-500 text-white rounded-xl"
+        >
           Convert
         </button>
-        <p class="text-xl border-2 rounded-xl p-2">
-          Miles: <span id="milesResult"></span>
+        <p class="text-xl border-2 rounded-xl px-4 py-2 bg-slate-300">
+          Result: <span id="milesResult">0</span> miles
         </p>
       </div>
     </div>
@@ -139,9 +148,10 @@
       <!-- Select conversion type -->
       <div class="flex gap-8 mb-10">
         <h3 class="text-xl font-semibold my-auto">Select Conversion Type:</h3>
-        <select 
+        <select
           onchange="toggleConversion(this.value)"
-          class="text-xl border-2 rounded-xl p-2">
+          class="text-xl border-2 rounded-xl p-2"
+        >
           <option value="toMetric">
             Fahrenheit (F&deg) to Celsius (C&deg)
           </option>
@@ -154,32 +164,38 @@
       <!-- To Metric -->
       <div class="toMetric flex gap-8">
         <input
+          id="farenheitInput"
           type="number"
           class="text-xl border-2 rounded-xl p-2"
           placeholder="Enter Fahrenheit (F&deg):"
         />
         <button
-          class="py-2 px-4 bg-blue-600 hover:bg-blue-800 duration-500 text-white rounded-xl">
+          onclick="farenheitToCelsius()"
+          class="py-2 px-4 bg-slate-700 hover:bg-blue-800 duration-500 text-white rounded-xl"
+        >
           Convert
         </button>
-        <p class="text-xl border-2 rounded-xl p-2">
-          Celsius (C&deg): <span id="celsiusResult"></span>
+        <p class="text-xl border-2 rounded-xl px-4 py-2 bg-slate-300">
+          Result: <span id="celsiusResult">0</span> C&deg 
         </p>
       </div>
 
       <!-- To Imperial -->
       <div class="toImperial flex gap-8 hidden">
         <input
+          id="celsiusInput"
           type="number"
           class="text-xl border-2 rounded-xl p-2"
           placeholder="Enter Celsius (C&deg):"
         />
         <button
-          class="py-2 px-4 bg-blue-600 hover:bg-blue-800 duration-500 text-white rounded-xl">
+          onclick="celsiusToFarenheit()"
+          class="py-2 px-4 bg-slate-700 hover:bg-blue-800 duration-500 text-white rounded-xl"
+        >
           Convert
         </button>
-        <p class="text-xl border-2 rounded-xl p-2">
-          Fahrenheit (F&deg): <span id="farenheitResult"></span>
+        <p class="text-xl border-2 rounded-xl px-4 py-2 bg-slate-300">
+          Result: <span id="farenheitResult">0</span> F&deg
         </p>
       </div>
     </div>
