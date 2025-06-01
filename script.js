@@ -48,6 +48,7 @@ function toggleConversion(conversionType) {
     toMetric.forEach((item) => item.classList.remove("hidden"));
     toImperial.forEach((item) => item.classList.add("hidden"));
   }
+
   if (conversionType === "toImperial") {
     toMetric.forEach((item) => item.classList.add("hidden"));
     toImperial.forEach((item) => item.classList.remove("hidden"));
@@ -94,3 +95,4 @@ function farenheitToCelsius(){
   let result = (farenheit - 32) * (5/9)
   document.getElementById("celsiusResult").textContent = result.toFixed(2);
 }
+
