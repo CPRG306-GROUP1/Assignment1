@@ -40,8 +40,9 @@ function toggleConversion(conversionType) {
   if (conversionType === "toImperial"){
     toMetric.forEach(item => item.classList.add("hidden"))
     toImperial.forEach(item => item.classList.remove("hidden"))
-  }
+
 }
+
 
 
 // converts pounds to kilograms
@@ -57,3 +58,28 @@ function kilogramsToPounds(){
   let result = kilogram * 2.2;
   document.getElementById('poundsResult').textContent = result.toFixed(2);
 }
+// === Distance Conversion Functions ===
+// converts Miles to kilometer
+function milesToKilometers() {
+  let input = document.querySelector("#distance .toMetric input").value;
+  let miles = parseFloat(input);
+  if (isNaN(miles)) {
+    alert("Please enter a valid number for miles.");
+    return;
+  }
+  let result = miles * 1.60934;
+  document.getElementById("kilometersResult").textContent = result.toFixed(2);
+}
+//function kilometer to miles
+function kilometersToMiles() {
+  let input = document.querySelector("#distance .toImperial input").value;
+  let kilometers = parseFloat(input);
+  if (isNaN(kilometers)) {
+    alert("Please enter a valid number for kilometers.");
+    return;
+  }
+  let result = kilometers / 1.60934;
+  document.getElementById("milesResult").textContent = result.toFixed(2);
+}
+
+
