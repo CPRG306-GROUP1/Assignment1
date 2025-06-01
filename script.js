@@ -57,8 +57,8 @@ function kilogramsToPounds(){
   let result = kilogram * 2.2;
   document.getElementById('poundsResult').textContent = result.toFixed(2);
 }
-// converts Miles to kilometer
 // === Distance Conversion Functions ===
+// converts Miles to kilometer
 function milesToKilometers() {
   let input = document.querySelector("#distance .toMetric input").value;
   let miles = parseFloat(input);
