@@ -40,7 +40,10 @@ function toggleConversion(conversionType) {
   if (conversionType === "toImperial"){
     toMetric.forEach(item => item.classList.add("hidden"))
     toImperial.forEach(item => item.classList.remove("hidden"))
-  }
+
+}
+
+
 
 // converts pounds to kilograms
 function poundsToKilograms(){
@@ -78,3 +81,5 @@ function kilometersToMiles() {
   let result = kilometers / 1.60934;
   document.getElementById("milesResult").textContent = result.toFixed(2);
 }
+
+
